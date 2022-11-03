@@ -1,0 +1,63 @@
+<div class="container">
+  <section class="header">
+    <div class="header__info">
+      <div class="header__link" appTooltip="Click here to chat with us"><a>Chat with us</a></div>
+      <div class="header__link" appTooltip="Click here to phone us"><a href=>{{ '(066)5554285' | phoneNumber }}</a> </div>
+      <div class="header__link" appTooltip="Click here to mail us"><a href=>info@freshnesecom.com</a></div>
+      <div class="header__link" appTooltip="Click here to open blog"><a [routerLink]="['/blog']">Blog</a></div>
+      <div routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="header__link" appTooltip="Click here to read about us"><a [routerLink]="['/about']">About Us</a></div>
+      <div class="header__link" appTooltip="Click here to start a career"><a [routerLink]="['/career']">Careers</a></div>
+    </div>
+    <div class="header__search">
+      <div class="header__title">
+        <a [routerLink]="['/']">Freshnesecom</a>
+      </div>
+      <div class="header__search-box">
+        <div class="header__search-dropdown-menu">
+          <div class="header__search-categories" data-cy="categories" [routerLink]="['/categories']">
+            Categories
+            <img src="assets/pictures/Menu-arrow.svg">
+          </div>
+          <ul style="display: none">
+            <li>All</li>
+            <li>Summer</li>
+            <li>Winter</li>
+          </ul>
+        </div>
+        <div class="header__search-bar">
+          <input type="text" class="header__search-input" id="searchInput" placeholder="Search products" [(ngModel)]="searchText" (keyup.enter)="filterPictures()">
+          <img class="header__search-icon" id="searchBtn" src="assets/pictures/Layer.svg" alt="img" (click)="filterPictures()"/>
+        </div>
+      </div>
+      <div class="header__basket-info" appTooltip="{{basketText}}">
+        <img class="header__basket-icon" data-cy="basket_icon" src="assets/pictures/thefreeforty_basket_icon-icons.com_66334.svg"
+             alt="icon" (click)="showBasket()">
+      </div>
+      <div *ngIf="basketLength$ | async as length" >
+        <div class="header__basket-length" [@basketLength]="length" >{{length}}</div>
+      </div>
+      <div *ngIf="basketLength$ | async as length" >
+        <div class="header__basket-length" [@basketLength]="length" >{{length}}</div>
+      </div>
+    </div>
+  </section>
+  <ng-container *ngIf="basketModal">
+    <div
+      *ngIf="basket$ | async as products"
+      class="header__basket-items">
+      Shopping cart
+      <div class="header__basket-close" (click)="closeBasket()">X</div>
+      <div
+        *ngFor="let product of products"
+        class="header__basket-item">
+        <img class="header__basket-item-img" src="{{product.img}}" alt="img">
+        <div class="header__basket-item-title">{{product.title}}</div>
+        <div class="header__basket-item-year">Year: {{product.year}}</div>
+        <div class="header__basket-item-author">Author: {{product.author}}</div>
+        <div class="header__basket-item-price">{{product.price}} USD</div>
+      </div>
+      <button class="header__basket-button" [routerLink]="['/basket']" (click)="closeBasket()">Go to Checkout</button>
+    </div>
+  </ng-container>
+</div>
+

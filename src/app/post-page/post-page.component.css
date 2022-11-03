@@ -1,0 +1,169 @@
+.post {
+  text-shadow: 1px 1px 1px white
+}
+
+.post__head {
+  margin: 0 auto;
+  position: relative;
+  width: 1170px;
+  height: 480px;
+}
+
+.post__head-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+.post__head-info {
+  margin-left: 0;
+  position: absolute;
+  top: 364px;
+  left: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 12px;
+}
+
+.post__head-info-item {
+  width: 200px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+  color: #A9A9A9;
+  display: flex;
+  justify-content: space-between;
+}
+
+.post__head-text {
+  position: absolute;
+  left:400px;
+  right: 200px;
+  top: 313px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  line-height: 140%;
+  color: #FFFFFF;
+}
+
+.post__head-info-value {
+  color: #FFFFFF;
+}
+
+.post__content {
+  margin: 40px auto;
+  width: 1100px;
+}
+.post__reply {
+  width: 1100px;
+  margin: 40px auto;
+}
+
+.post__reply-title {
+  font-style: normal;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  line-height: 33px;
+}
+
+.post__reply-subtitle {
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  line-height: 23px;
+  margin-top: 12px;
+}
+
+.post__reply-subtitle > a {
+  text-decoration: underline;
+  margin: 0;
+}
+
+.post__form {
+  margin-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form__wrap{
+  margin-left: 0;
+}
+
+.form__title{
+  margin-left: 30px;
+  margin-top: 30px;
+  font-style: normal;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  line-height: 18px;
+}
+
+.form__input {
+  width: 290px;
+  height: 42px;
+  border: 1px solid #D1D1D1;
+  border-radius: 12px;
+  margin-top: 5px;
+}
+
+input[type=checkbox] {
+  margin-top: 30px;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  border: 2px solid #555555;
+}
+
+.form__input::placeholder {
+  color: #A9A9A9;
+}
+
+textarea {
+  min-width:700px;
+  min-height: 200px;
+  vertical-align: top;
+  text-align: left;
+  resize: none;
+}
+
+.form__button {
+  width: 250px;
+  height: 48px;
+  color: #FFFFFF;
+  background: #6A983C;
+  border: 2px solid #46760A;
+  border-radius: 12px;
+  margin-top: 20px;
+  margin-left: 60px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 22px;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+
+.post__comments{
+  display: flex;
+  flex-direction: column;
+  margin-left: 0;
+  margin-top: 50px;
+}
+
+.post__comments-title {
+  font-style: normal;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  line-height: 33px;
+}
+
+.post_comment{
+  margin: 0 0 0 0;
+}

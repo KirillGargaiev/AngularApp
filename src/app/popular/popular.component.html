@@ -1,0 +1,22 @@
+<div class="content-item">
+  <p class="content-item__title">
+    Popular
+  </p>
+  <div class="content-item__menu"
+       *ngIf="menu$ | async as menu">
+    <ng-container class="content-item__menu-list"
+                  *ngFor="let el of menu">
+      <a class="content-item__menu-item" [routerLink]="['/categories', el.id]">{{el.name}}</a>
+    </ng-container>
+  </div>
+  <div class="content-item__field"
+       *ngIf="arr$ | async as arr">
+    <ng-container class="content-item__list"
+                  *ngFor="let el of arr"
+    >
+      <app-picture-item class="content-item__element"
+                        [pic]="el"
+      ></app-picture-item>
+    </ng-container>
+  </div>
+</div>

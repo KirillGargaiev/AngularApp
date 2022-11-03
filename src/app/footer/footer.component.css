@@ -1,0 +1,29 @@
+.footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.footer__item{
+  display: flex;
+  flex-direction: column;
+}
+
+.item__title{
+  font-style: normal;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.item__link{
+  margin-top: 16px;
+  font-style: normal;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  line-height: 19px;
+  color: #6A983C;
+  cursor: pointer;
+}

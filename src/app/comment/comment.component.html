@@ -1,0 +1,20 @@
+<div
+  class="comment">
+  <div class="comment__head">
+    <div class="comment__author">{{comment.name}}</div>
+  </div>
+  <div class="comment__text">{{comment.text}}</div>
+  <div class="comment_reply" (click)="OnReply(comment.id, comment.postId)">Reply</div>
+</div>
+<div *ngIf="comments$ | async as comments">
+  <div *ngIf="replies.length > 0">
+    <app-comment
+      *ngFor="let reply of replies"
+      [form]="form"
+      [comment]="reply"
+      [replies]="getReplies(reply.id, comments)"
+      [valid]="valid">
+    </app-comment>
+  </div>
+</div>
+

@@ -1,0 +1,171 @@
+<div class="checkout-page">
+  <div class="checkout-page__billing-form">
+    <div class="checkout-page__title">
+      Billing info
+    </div>
+    <div class="checkout-page__subtitle">
+      Please enter your billing info
+    </div>
+    <form
+      class="checkout-page__form form"
+      [formGroup]="form">
+      <div class="form__item">
+        <div class="form__item-name">
+          First name
+        </div>
+        <input
+          formControlName="name"
+          placeholder="First name"
+          class="form__item-input">
+        <div
+          *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+          class="validation">
+          <small
+            *ngIf="form.get('name')?.errors?.['required']"
+            style="display: block"> Field can't be empty</small>
+        </div>
+      </div>
+      <div class="form__item">
+        <div class="form__item-name">
+          Last name
+        </div>
+        <input
+          formControlName="surname"
+          placeholder="Last name"
+          class="form__item-input">
+        <div
+          *ngIf="form.get('surname')?.invalid && form.get('surname')?.touched"
+          class="validation">
+          <small
+            *ngIf="form.get('surname')?.errors?.['required']"
+            style="display: block"> Field can't be empty</small>
+        </div>
+      </div>
+      <div class="form__item">
+        <div class="form__item-name">
+          Email address
+        </div>
+        <input
+          formControlName="email"
+          placeholder="Email address"
+          class="form__item-input">
+        <div
+          *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+          class="validation">
+          <small
+            *ngIf="form.get('email')?.errors?.['required']"
+            style="display: block"> Field can't be empty</small>
+          <small
+            *ngIf="form.get('email')?.errors?.['email']"
+            style="display: block"> Email must be valid</small>
+        </div>
+      </div>
+      <div class="form__item">
+        <div class="form__item-name">
+          Phone number
+        </div>
+        <input
+          formControlName="phone"
+          placeholder="Phone number"
+          class="form__item-input">
+        <div
+          *ngIf="form.get('phone')?.invalid && form.get('phone')?.touched"
+          class="validation">
+          <small
+            *ngIf="form.get('phone')?.errors?.['required']"
+            style="display: block"> Field can't be empty</small>
+        </div>
+      </div>
+      <div class="form__item">
+        <div class="form__item-name">
+          Address
+        </div>
+        <input
+          formControlName="address"
+          placeholder="Address"
+          class="form__item-input">
+        <div
+          *ngIf="form.get('address')?.invalid && form.get('address')?.touched"
+          class="validation">
+          <small
+            *ngIf="form.get('address')?.errors?.['required']"
+            style="display: block"> Field can't be empty</small>
+        </div>
+      </div>
+      <div class="form__item">
+        <div class="form__item-name">
+          Town / City
+        </div>
+        <input
+          formControlName="city"
+          placeholder="Town or city"
+          class="form__item-input">
+        <div
+          *ngIf="form.get('city')?.invalid && form.get('city')?.touched"
+          class="validation">
+          <small
+            *ngIf="form.get('city')?.errors?.['required']"
+            style="display: block"> Field can't be empty</small>
+        </div>
+      </div>
+      <div class="form__item">
+        <div class="form__item-name">
+          State / Country
+        </div>
+        <input
+          formControlName="state"
+          placeholder="Choose a state or Country"
+          class="form__item-input">
+        <div
+          *ngIf="form.get('state')?.invalid && form.get('state')?.touched"
+          class="validation">
+          <small
+            *ngIf="form.get('state')?.errors?.['required']"
+            style="display: block"> Field can't be empty</small>
+        </div>
+      </div>
+      <div class="form__item">
+        <div class="form__item-name">
+          ZIP / Postal code
+        </div>
+        <input
+          formControlName="postalCode"
+          placeholder="Postal code or ZIP"
+          class="form__item-input">
+        <div
+          *ngIf="form.get('postalCode')?.invalid && form.get('postalCode')?.touched"
+          class="validation">
+          <small
+            *ngIf="form.get('postalCode')?.errors?.['required']"
+            style="display: block"> Field can't be empty</small>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="checkout-page__order order">
+    <div class="checkout-page__title">Order Summary</div>
+    <div class="checkout-page__subtitle">
+      Price can change depending on shipping method and taxes of your state.
+    </div>
+    <div *ngIf="basket$ | async as bas">
+      <div
+        data-cy="order_item"
+        class="order__item"
+        *ngFor="let el of bas">
+        <img class="order__img" src="{{el.img}}" alt="img">
+        <div class="order__info">
+          <div class="order__title">{{el.title}}</div>
+          <div class="order__subtitle">Author: {{el.author}} <br/> Year: {{el.year}} </div>
+          <div class="order__price">{{el.price}} USD</div>
+        </div>
+        <button class="order__button-decrement" (click)="decrementAmount(el)">-</button>
+        <div class="order__amount">{{el.amount}}</div>
+        <button class="order__button-increment" (click)="incrementAmount(el)">+</button>
+      </div>
+    </div>
+    <div *ngIf="basket$ | async as bas " class="order__total-price">
+      Total price: {{totalPrice(bas)}} USD
+      <button class="order__submit-button" [disabled]="form.invalid" (click)="submitOrder(bas)" >Submit order</button>
+    </div>
+  </div>
+</div>

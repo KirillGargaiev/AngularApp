@@ -1,0 +1,108 @@
+<div class="product-page" *ngIf="product$ | async as product" [@productPage]="product">
+  <img  class="product-page__img" src="{{product.img}}" alt="img">
+  <div class="product-page__title">{{product.title}}</div>
+  <div class="product-page__subtitle">
+    <div class="product-page__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aliquid aspernatur consequuntur dicta dolore est ipsa molestiae, numquam optio quidem reprehenderit sint voluptatem. Facilis, labore, sed. Dolorem eius ipsam, magnam possimus quos recusandae temporibus ut? Eos maiores non quidem vitae!</div>
+    <div class="product-page__year">Year: {{product.year}}</div>
+    <div class="product-page__author">Author: {{product.author}}</div>
+  </div>
+  <button *ngIf="!product.inBasket; else elseBlock"
+          type="button" (click)="addToCard(product)" class="product-page__button"> Add to card
+  </button>
+  <ng-template #elseBlock>
+    <button
+      type="button" class="product-page__button" (click)="removeFromCard(product)"> In card
+    </button>
+  </ng-template>
+  <div class="product-page__menu">
+    <div class="product-page__menu-item" (click)="showDescription()">Description</div>
+    <div class="product-page__menu-item" (click)="showReviews()">Reviews</div>
+    <div class="product-page__menu-item" (click)="showQuestions()">Questions</div>
+  </div>
+  <div *ngIf="reviews" [@productPageMenu]="reviews">
+    <div class="product-page__review-block review-block"
+         *ngIf="reviews$ | async as reviews">
+      <div class="review-block__review-item"
+           data-cy="review_item"
+           *ngFor="let review of reviews">
+        <div class="review-block__review-title">{{review.name}}:</div>
+        <div class="review-block__review-comment">"{{review.comment}}"</div>
+        <button class="review-block__button" (click)="storeRemoveReviews(review.id)">X</button>
+      </div>
+    </div>
+    <form
+      [formGroup]="form"
+      (ngSubmit)="submit()"
+      class="product-page__form form"
+    >
+      <div class="form__item" data-cy="form_item">
+        <label class="form__item-title">Name</label>
+        <input class="form__item-input" type="text" placeholder="Name" formControlName="name">
+        <div
+          *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+          class="validation">
+          <small
+            *ngIf="form.get('name')?.errors?.['required']"
+            style="display: block"> Name can't be empty</small>
+          <small
+            *ngIf="form.get('name')?.errors?.['minlength']"
+            style="display: block"> Name should contain at
+            least {{form.get('name')?.errors?.['minlength'].requiredLength}} symbols</small>
+          <small
+            *ngIf="form.get('name')?.errors?.['maxlength']"
+            style="display: block"> Name should contain no more
+            than {{form.get('name')?.errors?.['maxlength'].requiredLength}} symbols</small>
+        </div>
+      </div>
+      <div class="form__item" data-cy="form_item">
+        <label class="form__item-title">Email</label>
+        <input class="form__item-input" type="email" placeholder="Email" formControlName="email">
+        <div
+          *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+          class="validation">
+          <small
+            *ngIf="form.get('email')?.errors?.['required']"
+            style="display: block"> Email can't be empty</small>
+          <small
+            *ngIf="form.get('email')?.errors?.['email']"
+            style="display: block"> Enter valid email</small>
+        </div>
+      </div>
+      <div class="form__item" data-cy="form_item">
+        <label class="form__item-title">Rate</label>
+        <select class="form__item-input" type="select" formControlName="score">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <div
+          *ngIf="form.get('score')?.invalid && form.get('score')?.touched"
+          class="validation">
+          <small
+            *ngIf="form.get('score')?.errors?.['required']"
+            style="display: block"> Rate can't be empty</small>
+        </div>
+      </div>
+      <div class="form__item" data-cy="form_item">
+        <label class="form__item-title">Comment</label>
+        <input class="form__item-input" type="text" placeholder="Comment" formControlName="comment">
+        <div
+          *ngIf="form.get('comment')?.invalid && form.get('comment')?.touched"
+          class="validation">
+          <small
+            *ngIf="form.get('comment')?.errors?.['maxlength']"
+            style="display: block"> Comment can't contain more
+            than {{form.get('comment')?.errors?.['maxlength'].requiredLength}} symbols</small>
+        </div>
+      </div>
+      <div>
+        <button type="submit" class="form__item-button" data-cy="form_item-button" [disabled]="form.invalid">Send a comment</button>
+      </div>
+    </form>
+  </div>
+  <div *ngIf="description" [@productPageMenu]="description">
+    <div class="product-page__description-block">Here will be a description</div>
+  </div>
+</div>

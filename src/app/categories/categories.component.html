@@ -1,0 +1,110 @@
+<!--<app-filter></app-filter>-->
+<!--<app-categories-menu></app-categories-menu>-->
+<div *ngIf="pictures$ | async as arr"
+     class="categories"
+>
+  <div class="categories__head head">
+    <div class="head__title"> Pictures store</div>
+    <div class="head__buttons">
+      <img class="head__icon" src="assets/pictures/ic-layout-square-grid.svg" alt="img">
+      <div class="head__button" data-cy="grid_button" (click)="toGridView()"> Grid view</div>
+      <img class="head__icon" src="assets/pictures/ic-layout-sections.svg" alt="img">
+      <div class="head__button" data-cy="list_button" (click)="toListView()"> List view</div>
+    </div>
+  </div>
+  <div class="categories__filter-field filter">
+    <div class="filter__item">
+      <img class="filter__img" src="assets/pictures/Vector.svg" alt="img">
+      <div class="filter__title"> Some filter</div>
+    </div>
+    <div class="filter__item">
+      <img class="filter__img" src="assets/pictures/Vector.svg" alt="img">
+      <div class="filter__title"> Some filter</div>
+    </div>
+    <div class="filter__item">
+      <img class="filter__img" src="assets/pictures/Vector.svg" alt="img" >
+      <div class="filter__title"> Some filter</div>
+    </div>
+  </div>
+  <div class="categories__content">
+    <div class="categories__menu menu">
+      <div
+        *ngIf="categories$ | async as categories"
+        class="menu__item">
+        <div class="menu__title"> Categories</div>
+        <div
+          *ngFor="let category of categories"
+          class="menu__selector" data-cy="menu_item"><a [routerLink]="['/categories', category.id]">{{category.name}}</a></div>
+      </div>
+      <div class="menu__item">
+        <div class="menu__title"> Brands</div>
+        <div class="menu__selector">Filter by brand</div>
+        <div class="menu__selector">Filter by brand</div>
+        <div class="menu__selector">Filter by brand</div>
+        <div class="menu__selector">Filter by brand</div>
+      </div>
+      <div class="menu__item">
+        <div class="menu__title"> Rating</div>
+        <div class="menu__selector"><input type="checkbox" [(ngModel)]="rating_5"><img class="menu__selector-img" src="assets/pictures/Star.svg" alt="star"><img class="menu__selector-img" src="assets/pictures/Star.svg" alt="star"><img class="menu__selector-img" src="assets/pictures/Star.svg" alt="star"><img class="menu__selector-img" src="assets/pictures/Star.svg" alt="star"><img class="menu__selector-img" src="assets/pictures/Star.svg" alt="star"></div>
+        <div class="menu__selector"><input type="checkbox" [(ngModel)]="rating_4"><img class="menu__selector-img" src="assets/pictures/Star.svg" alt="star"><img class="menu__selector-img" src="assets/pictures/Star.svg" alt="star"><img class="menu__selector-img" src="assets/pictures/Star.svg" alt="star"><img class="menu__selector-img" src="assets/pictures/Star.svg" alt="star"></div>
+        <div class="menu__selector"><input type="checkbox" [(ngModel)]="rating_3"><img class="menu__selector-img" src="assets/pictures/Star.svg" alt="star"><img class="menu__selector-img" src="assets/pictures/Star.svg" alt="star"><img class="menu__selector-img" src="assets/pictures/Star.svg" alt="star"></div>
+        <div class="menu__selector"><input type="checkbox" [(ngModel)]="rating_2"><img class="menu__selector-img" src="assets/pictures/Star.svg" alt="star"><img class="menu__selector-img" src="assets/pictures/Star.svg" alt="star"></div>
+        <div class="menu__selector"><input type="checkbox" [(ngModel)]="rating_1"><img class="menu__selector-img" src="assets/pictures/Star.svg" alt="star"></div>
+      </div>
+      <button class="menu__button" (click)="submit()">Filter</button>
+    </div>
+    <div
+      [ngClass]="{
+    list: listView,
+    grid: !listView
+    }">
+      <div
+        [ngClass]="{
+      list__item: listView,
+      grid__item: !listView
+      }"
+        *ngFor="let item of arr | paginate:{
+        itemsPerPage: tableSize,
+        currentPage: page,
+        totalItems: count
+        };
+          let i = index">
+        <img
+          [ngClass]="{
+        list__itemImg: listView,
+        grid__itemImg: !listView
+        }"
+          alt="img" src="{{item.img}}">
+        <div
+          [ngClass]="{
+      list__itemTitle: listView,
+      grid__itemTitle: !listView
+      }"
+        >{{item.title}}</div>
+        <div
+          [ngClass]="{
+      list__itemPrice: listView,
+      grid__itemPrice: !listView
+      }"
+        >
+          {{item.price}} USD
+        </div>
+        <div
+          [ngClass]="{
+        list__itemRoute: listView,
+        grid__itemRoute: !listView
+        }"
+          [routerLink]="['/product', item.id]">
+          Product Detail
+        </div>
+      </div>
+    </div>
+  </div>
+  <pagination-controls
+    class="categories__pagination"
+    previousLabel="Prev"
+    nextLabel="Next"
+    (pageChange)="onTableDataChange($event)"
+  ></pagination-controls>
+</div>
+<router-outlet></router-outlet>

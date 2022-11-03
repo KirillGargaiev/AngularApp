@@ -1,0 +1,101 @@
+<div
+  class="post"
+  *ngIf="post$ | async as post">
+  <div class="post__head">
+    <img class="post__head-img" src="{{post.img}}" alt="img">
+    <div class="post__head-info">
+      <div class="post__head-info-item">
+        <div>Date:</div>
+        <div class="post__head-info-value">{{post.date}}</div>
+      </div>
+      <div class="post__head-info-item">
+        <div>Category:</div>
+        <div class="post__head-info-value">{{post.category.name}}</div>
+      </div>
+      <div class="post__head-info-item">
+        <div>Author:</div>
+        <div class="post__head-info-value">{{post.author}}</div>
+      </div>
+    </div>
+    <div class="post__head-text">{{post.text}}</div>
+  </div>
+  <div class="post__content">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid aspernatur cupiditate earum illo obcaecati perferendis quas sequi unde! Aspernatur consectetur consequuntur culpa debitis deserunt dicta neque omnis, perferendis perspiciatis placeat quisquam sunt velit, vero? A ab ad aspernatur cumque debitis dicta eaque eveniet, ex exercitationem hic inventore magni natus neque nesciunt nisi officia quam quibusdam quis reprehenderit sed ut voluptas voluptatibus? Adipisci consequuntur, cum eligendi harum impedit iste officia. Atque deserunt eaque error ipsam laudantium neque quibusdam. Aliquam enim perspiciatis quisquam voluptas? Ex fugit in nemo officia pariatur quas quia quidem repellendus. Aliquam, amet at ex explicabo id laborum optio.
+  </div>
+  <div class="post__reply">
+    <div class="post__reply-title">Leave a reply</div>
+    <div class="post__reply-subtitle">Already have an account? <a>Sign in</a> to leave a reply.</div>
+      <form [formGroup]="form" class="post__form form">
+        <div class="form__wrap">
+          <div class="form__title">
+          Name
+          </div>
+          <input
+            formControlName="name"
+            placeholder="Name"
+            class="form__input">
+          <div
+            *ngIf="form.get('name')?.invalid && form.get('name')?.touched"
+            class="validation">
+            <small
+              *ngIf="form.get('name')?.errors?.['required']"
+              style="display: block"> Name can't be empty</small>
+          </div>
+        </div>
+        <div class="form__wrap">
+          <div class="form__title">
+            Email
+          </div>
+          <input
+            formControlName="email"
+            placeholder="Email"
+            class="form__input">
+          <div
+            *ngIf="form.get('email')?.invalid && form.get('email')?.touched"
+            class="validation">
+            <small
+              *ngIf="form.get('email')?.errors?.['required']"
+              style="display: block"> Email can't be empty</small>
+            <small
+              *ngIf="form.get('email')?.errors?.['email']"
+              style="display: block"> Email should be valid</small>
+          </div>
+        </div>
+        <div class="form__wrap">
+          <input type="checkbox"
+        formControlName="saveName"
+        class="form__input">
+       Save my name and email in this browser for a next time comment.</div>
+        <div class="form__wrap">
+          <div class="form__title">
+            Comment
+          </div>
+          <textarea
+            formControlName="text"
+            placeholder="Space for your comment"
+            class="form__input"></textarea>
+          <div
+            *ngIf="form.get('text')?.invalid && form.get('text')?.touched"
+            class="validation">
+            <small
+              *ngIf="form.get('text')?.errors?.['required']"
+              style="display: block"> Comment can't be empty</small>
+          </div>
+        </div>
+        <button class="form__button" (click)="submit()" [disabled]="form.invalid">Send a comment</button>
+      </form>
+    <div class="post__comments" *ngIf="comments$ | async as comments">
+      <div class="post__comments-title">Comments</div>
+      <div *ngIf="rootComments$ | async as rootComments">
+        <app-comment
+          class="post_comment"
+          [form]="form.value"
+          *ngFor="let rootComment of rootComments"
+          [comment]="rootComment"
+          [replies]="getReplies(rootComment.id, comments)"
+          [valid]="!form.invalid">
+        </app-comment>
+      </div>
+    </div>
+  </div>
+</div>

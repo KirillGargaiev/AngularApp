@@ -1,0 +1,30 @@
+<div class="reviews-block">
+  <div class="reviews-block__title">Our customers says</div>
+  <div
+    class="reviews-block__reviews reviews"
+    id="reviews"
+    *ngIf="reviews$ | async as reviews"
+  >
+    <button class="reviews__left-button" (click)="scrollLeft()">
+      <img class="reviews__left-arrow" src="assets/pictures/left-arrow.svg">
+    </button>
+    <div id="reviews_wrap" class="reviews__wrap">
+      <div
+        class="reviews__item"
+        *ngFor="let review of reviews"
+      >
+        <div class="reviews__item-comment">
+          {{review.comment}}
+        </div>
+        <div class="reviews__item-name">
+          {{review.name}}
+        </div>
+      </div>
+    </div>
+    <div class="reviews__gradient">
+    </div>
+    <button class="reviews__right-button" (click)="scrollRight()">
+      <img class="reviews__right-arrow" src="assets/pictures/right-arrow.svg" disabled="true">
+    </button>
+  </div>
+</div>

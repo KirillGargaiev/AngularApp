@@ -1,0 +1,13 @@
+<div class="menu"
+  *ngIf="menuList$ | async as menu">
+  <div
+    *ngFor="let item of menu"
+    class="menu__item">
+    <a [routerLink]="['/categories', item.id]">
+      {{item.name}}
+    </a>
+    <img class="menu__arrow" src="assets/pictures/Menu-arrow.svg" alt="img">
+  </div>
+</div>
+
+

@@ -1,0 +1,647 @@
+{
+  "pictures": [
+    {
+      "id": 1,
+      "categoryId": 1,
+      "img": "https://telegra.ph/file/c6e9b6e9c6fed3ef90ee6.jpg",
+      "title": "Sea",
+      "author": "Oleh",
+      "year": 2001,
+      "price": 5000,
+      "bestsel": true,
+      "popular": true,
+      "inBasket": false
+    },
+    {
+      "id": 2,
+      "categoryId": 0,
+      "img": "https://telegra.ph/file/7cb1010545ad939e1df0e.jpg",
+      "title": "Ocean",
+      "author": "Mama",
+      "year": 2021,
+      "price": 7000,
+      "ranking": true,
+      "popular": true,
+      "inBasket": false
+    },
+    {
+      "id": 3,
+      "categoryId": 2,
+      "img": "https://telegra.ph/file/2fd2877d358947eae1153.jpg",
+      "title": "Lake",
+      "author": "Vasyl",
+      "year": 2001,
+      "price": 5000,
+      "bestsel": true,
+      "inBasket": false
+    },
+    {
+      "id": 4,
+      "categoryId": 0,
+      "img": "https://telegra.ph/file/322c1470bc2411cf95c2f.jpg",
+      "title": "Winter",
+      "author": "Mama",
+      "year": 2021,
+      "price": 7000,
+      "ranking": true,
+      "inBasket": false
+    },
+    {
+      "id": 5,
+      "categoryId": 2,
+      "img": "https://telegra.ph/file/59fc187254467287c0055.jpg",
+      "title": "River",
+      "author": "Leonid",
+      "year": 2001,
+      "price": 5000,
+      "bestsel": true,
+      "inBasket": false
+    },
+    {
+      "id": 6,
+      "categoryId": 1,
+      "img": "https://telegra.ph/file/cb3b2ea2ebaaf83ff2111.png",
+      "title": "Summer",
+      "author": "Mama",
+      "year": 2006,
+      "price": 7000,
+      "ranking": true,
+      "popular": true,
+      "inBasket": false
+    },
+    {
+      "id": 7,
+      "categoryId": 3,
+      "img": "https://telegra.ph/file/d61e23fe0a310540e609c.png",
+      "title": "School",
+      "author": "Veronika",
+      "year": 2012,
+      "price": 6000,
+      "inBasket": false
+    },
+    {
+      "id": 8,
+      "categoryId": 5,
+      "img": "https://telegra.ph/file/03da9e69457482db7b855.png",
+      "title": "University",
+      "author": "Pavel",
+      "year": 2021,
+      "price": 3000,
+      "inBasket": false
+    },
+    {
+      "id": 9,
+      "categoryId": 6,
+      "img": "https://telegra.ph/file/2febd75db0db5c21070f0.jpg",
+      "title": "Math",
+      "author": "Misha",
+      "year": 2014,
+      "price": 4500,
+      "inBasket": false
+    },
+    {
+      "id": 10,
+      "categoryId": 4,
+      "img": "https://telegra.ph/file/febc9bfa1c4d3f2e8f37f.png",
+      "title": "Book",
+      "author": "Kostya",
+      "year": 2018,
+      "price": 12000,
+      "inBasket": false
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Kirill",
+      "email": "k@gmail.com",
+      "score": "5",
+      "comment": "Good job",
+      "productId": 1
+    },
+    {
+      "id": 2,
+      "name": "Kyryll",
+      "email": "k@gmail.com",
+      "score": "5",
+      "comment": "Good work",
+      "productId": 2
+    },
+    {
+      "id": 3,
+      "name": "Kyryll",
+      "email": "k@gmail.com",
+      "score": "5",
+      "comment": "Good work",
+      "productId": 3
+    },
+    {
+      "id": 4,
+      "name": "Kyryll",
+      "email": "k@gmail.com",
+      "score": "5",
+      "comment": "Good work",
+      "productId": 4
+    },
+    {
+      "id": 6,
+      "name": "Kyryll",
+      "email": "k@gmail.com",
+      "score": "5",
+      "comment": "Good work",
+      "productId": 6
+    },
+    {
+      "id": 7,
+      "name": "Kyryll",
+      "email": "k@gmail.com",
+      "score": "5",
+      "comment": "Good work",
+      "productId": 2
+    },
+    {
+      "name": "Leonid",
+      "email": "leonid@regulus.team",
+      "score": "5",
+      "comment": "I like it",
+      "productId": 5,
+      "id": 12
+    },
+    {
+      "name": "Vasyl",
+      "email": "vads@adsf.tu",
+      "score": "3",
+      "comment": "No, verstka is good!",
+      "productId": 5,
+      "id": 14
+    },
+    {
+      "name": "Kyryll",
+      "email": "ADSAD@SAF.ty",
+      "score": "5",
+      "comment": "I enjoy this one",
+      "productId": 6,
+      "id": 15
+    },
+    {
+      "name": "Veronika",
+      "email": "ver.todoraki@gmail.com",
+      "score": "5",
+      "comment": "I love you",
+      "productId": 5,
+      "id": 16
+    },
+    {
+      "name": "Oleg",
+      "email": "Oleg@mail.ru",
+      "score": "5",
+      "comment": "Test is done",
+      "productId": 6,
+      "id": 17
+    },
+    {
+      "name": "Oleg",
+      "email": "Oleg@mail.ru",
+      "score": "5",
+      "comment": "Test is done",
+      "productId": 5,
+      "id": 19
+    },
+    {
+      "name": "Oleg",
+      "email": "Oleg@mail.ru",
+      "score": "5",
+      "comment": "Test is done",
+      "productId": 6,
+      "id": 20
+    },
+    {
+      "name": "Oleg",
+      "email": "Oleg@mail.ru",
+      "score": "5",
+      "comment": "Test is done",
+      "productId": 6,
+      "id": 21
+    },
+    {
+      "name": "Oleg",
+      "email": "Oleg@mail.ru",
+      "score": "5",
+      "comment": "Test is done",
+      "productId": 6,
+      "id": 22
+    },
+    {
+      "name": "Oleg",
+      "email": "Oleg@mail.ru",
+      "score": "5",
+      "comment": "Test is done",
+      "productId": 6,
+      "id": 23
+    },
+    {
+      "name": "Oleg",
+      "email": "Oleg@mail.ru",
+      "score": "5",
+      "comment": "Test is done",
+      "productId": 6,
+      "id": 24
+    },
+    {
+      "name": "Oleg",
+      "email": "Oleg@mail.ru",
+      "score": "5",
+      "comment": "Test is done",
+      "productId": 6,
+      "id": 25
+    },
+    {
+      "name": "Oleg",
+      "email": "Oleg@mail.ru",
+      "score": "5",
+      "comment": "Test is done",
+      "productId": 6,
+      "id": 26
+    },
+    {
+      "name": "Oleg",
+      "email": "Oleg@mail.ru",
+      "score": "5",
+      "comment": "Test is done",
+      "productId": 6,
+      "id": 27
+    },
+    {
+      "name": "Oleh",
+      "email": "Oleh@gmail.com",
+      "score": "4",
+      "comment": "I like it",
+      "productId": 4,
+      "id": 28
+    }
+  ],
+  "categories": [
+    {
+      "id": 0,
+      "name": "Portrait",
+      "products": [
+        1,
+        3
+      ]
+    },
+    {
+      "id": 1,
+      "name": "Still life",
+      "products": [
+        2,
+        4
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Landscape",
+      "products": [
+        3,
+        5
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Abstraction",
+      "products": [
+        4,
+        6
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Historical",
+      "products": [
+        2,
+        5
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Animalistics",
+      "products": [
+        1,
+        4
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Caricature",
+      "products": [
+        3,
+        6
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "category": {
+        "id": 0,
+        "name": "Portrait",
+        "products": [
+          1,
+          3
+        ]
+      },
+      "date": "10.12.2018",
+      "author": "Tim",
+      "text": "My first post on this platform",
+      "img": "https://telegra.ph/file/fbf5e97c41ca87d8a2123.jpg",
+      "comments": []
+    },
+    {
+      "id": 2,
+      "category": {
+        "id": 1,
+        "name": "Still life",
+        "products": [
+          2,
+          4
+        ]
+      },
+      "date": "11.12.2018",
+      "author": "Andrey",
+      "text": "My Second post on this platform",
+      "img": "https://telegra.ph/file/cc6f5e8922301224a4d5a.jpg",
+      "comments": []
+    },
+    {
+      "id": 3,
+      "category": {
+        "id": 1,
+        "name": "Still life",
+        "products": [
+          2,
+          4
+        ]
+      },
+      "date": "17.05.2019",
+      "author": "Kyryll",
+      "text": "My post on this platform",
+      "img": "https://telegra.ph/file/79993a0ce18b99db92133.jpg",
+      "comments": []
+    },
+    {
+      "id": 4,
+      "category": {
+        "id": 2,
+        "name": "Landscape",
+        "products": [
+          3,
+          5
+        ]
+      },
+      "date": "19.05.2018",
+      "author": "Oleh",
+      "text": "My post on this platform",
+      "img": "https://telegra.ph/file/af63f6604ff72d7cc4b44.jpg",
+      "comments": [],
+      "featured": true
+    },
+    {
+      "id": 5,
+      "category": {
+        "id": 0,
+        "name": "Portrait",
+        "products": [
+          1,
+          3
+        ]
+      },
+      "date": "11.05.2018",
+      "author": "Nazar",
+      "text": "My post on this platform",
+      "img": "https://telegra.ph/file/999e88250cd70ab841cc0.jpg",
+      "comments": []
+    },
+    {
+      "id": 6,
+      "category": {
+        "id": 2,
+        "name": "Landscape",
+        "products": [
+          3,
+          5
+        ]
+      },
+      "date": "17.08.2018",
+      "author": "Veronika",
+      "text": "My post on this platform",
+      "img": "https://telegra.ph/file/5f3477ac4fb71cc07da88.jpg",
+      "comments": []
+    },
+    {
+      "id": 7,
+      "category": {
+        "id": 0,
+        "name": "Portrait",
+        "products": [
+          1,
+          3
+        ]
+      },
+      "date": "08.04.2018",
+      "author": "Leonid",
+      "text": "My post on this platform",
+      "img": "https://telegra.ph/file/22903191fb553c249c41c.jpg",
+      "comments": [],
+      "featured": true
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "postId": 1,
+      "name": "John",
+      "email": "asdf@asdf.ru",
+      "text": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor."
+    },
+    {
+      "postId": 1,
+      "text": "Very interesting work",
+      "name": "Kyryll",
+      "email": "kgargaev@gmail.com",
+      "fatherId": null,
+      "id": 2
+    },
+    {
+      "postId": 1,
+      "text": "ASDFASFDAFSDFA",
+      "name": "rtyu",
+      "email": "rrtyu@mILSDF.SDF",
+      "fatherId": null,
+      "id": 3
+    },
+    {
+      "postId": 4,
+      "text": "Kyryll is my roommate",
+      "name": "Kostya",
+      "email": "gazinaft@ukr.net",
+      "fatherId": null,
+      "id": 4
+    },
+    {
+      "postId": 4,
+      "text": "Kyryll is my roommate",
+      "name": "Kostya",
+      "email": "gazinaft@ukr.net",
+      "fatherId": null,
+      "id": 5
+    },
+    {
+      "postId": 7,
+      "text": "agsdfgsd",
+      "name": "sdfgsd",
+      "email": "sdgsd@asdf.ru",
+      "fatherId": null,
+      "id": 6
+    },
+    {
+      "postId": 4,
+      "text": "Privet",
+      "name": "MyFriend",
+      "email": "hello@ijsd.ry",
+      "fatherId": 4,
+      "id": 7
+    },
+    {
+      "postId": 4,
+      "text": "I apologies",
+      "name": "Nikita",
+      "email": "nowhale@ukr.net",
+      "fatherId": 7,
+      "id": 8
+    },
+    {
+      "postId": 6,
+      "text": "Bysyk is very bysyk",
+      "name": "Veronika Valerievna",
+      "email": "bysyk@gmail.com",
+      "fatherId": null,
+      "id": 9
+    },
+    {
+      "postId": 6,
+      "text": "I agree",
+      "name": "Kyryll",
+      "email": "kirufniy@gmail.com",
+      "fatherId": 9,
+      "id": 10
+    },
+    {
+      "postId": 1,
+      "text": "Privet",
+      "name": "Marina",
+      "email": "MArina@gmail.con",
+      "fatherId": 2,
+      "id": 11
+    },
+    {
+      "postId": 1,
+      "text": "Zdrastvyite",
+      "name": "Marina",
+      "email": "MArina@gmail.con",
+      "fatherId": 11,
+      "id": 12
+    }
+  ],
+  "orders": [
+    {
+      "name": "asf",
+      "surname": "asdf",
+      "email": "asdf@asfd.ru",
+      "phone": "asdf",
+      "address": "asdf",
+      "city": "asdf",
+      "state": "asf",
+      "postalCode": "asdf",
+      "pictures": [
+        {
+          "id": 4,
+          "categoryId": 0,
+          "img": "https://telegra.ph/file/322c1470bc2411cf95c2f.jpg",
+          "title": "Winter",
+          "author": "Mama",
+          "year": 2021,
+          "price": 7000,
+          "ranking": true,
+          "inBasket": true,
+          "amount": 1
+        },
+        {
+          "id": 6,
+          "categoryId": 1,
+          "img": "https://telegra.ph/file/cb3b2ea2ebaaf83ff2111.png",
+          "title": "Summer",
+          "author": "Mama",
+          "year": 2006,
+          "price": 7000,
+          "ranking": true,
+          "popular": true,
+          "inBasket": true,
+          "amount": 1
+        }
+      ],
+      "price": 14000,
+      "id": 1
+    },
+    {
+      "name": "Kirill",
+      "surname": "safasdf",
+      "email": "aasdf@asd.ru",
+      "phone": "asdfasf",
+      "address": "safsdfdf",
+      "city": "safdasf",
+      "state": "asfasdf",
+      "postalCode": "asfasdfasdfas",
+      "pictures": [
+        {
+          "id": 4,
+          "categoryId": 0,
+          "img": "https://telegra.ph/file/322c1470bc2411cf95c2f.jpg",
+          "title": "Winter",
+          "author": "Mama",
+          "year": 2021,
+          "price": 7000,
+          "ranking": true,
+          "inBasket": true,
+          "amount": 1
+        },
+        {
+          "id": 6,
+          "categoryId": 1,
+          "img": "https://telegra.ph/file/cb3b2ea2ebaaf83ff2111.png",
+          "title": "Summer",
+          "author": "Mama",
+          "year": 2006,
+          "price": 7000,
+          "ranking": true,
+          "popular": true,
+          "inBasket": true,
+          "amount": 1
+        },
+        {
+          "id": 2,
+          "categoryId": 0,
+          "img": "https://telegra.ph/file/7cb1010545ad939e1df0e.jpg",
+          "title": "Ocean",
+          "author": "Mama",
+          "year": 2021,
+          "price": 7000,
+          "ranking": true,
+          "popular": true,
+          "inBasket": true,
+          "amount": 3
+        }
+      ],
+      "price": 35000,
+      "id": 2
+    }
+  ]
+}

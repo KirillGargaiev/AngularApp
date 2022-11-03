@@ -1,0 +1,30 @@
+.menu {
+  display: flex;
+}
+
+.menu__item {
+  margin-left: 50px;
+  margin-top: 30px;
+  padding: 15px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size:15px;
+  line-height: 22.5px;
+  text-align: left;
+  position: relative;
+}
+
+.menu__item:hover {
+  cursor: pointer
+}
+
+div > a {
+  color: black;
+  margin-right: 0;
+}
+
+.menu__arrow {
+  width: 10px;
+  height: auto;
+  margin-left: 0;
+}

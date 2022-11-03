@@ -1,0 +1,15 @@
+<img [@pictureItem]="pic" class='picImg' src="{{pic.img}}" alt="">
+<div class="picInfo">
+  <div [routerLink]="['/product', pic.id]" data-cy="pic_title" class="pic__title">{{pic.title}}</div>
+  <div class="pic__description">{{'Made in ' + pic.year}} {{' by ' + pic.author}}</div>
+  <div class="pic__price">{{pic.price}} USD &nbsp;&nbsp;&nbsp; </div>
+  <button *ngIf="!pic.inBasket; else elseBlock"
+          type="button" (click)="addToBasket()" data-cy="pic_button" class="pic__button"> Buy now
+  </button>
+  <ng-template #elseBlock>
+    <button
+      type="button" class="pic__button" data-cy="pic_button" (click)="removeFromBasket()"> In basket
+    </button>
+  </ng-template>
+</div>
+

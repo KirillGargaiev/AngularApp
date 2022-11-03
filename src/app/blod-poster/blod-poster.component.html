@@ -1,0 +1,60 @@
+<div class="blog-poster">
+  <div class="blog-poster__head">
+    <div class="blog-poster__title">
+      Read our Blog posts
+    </div>
+    <div class="blog-poster__ref"
+          [routerLink]="['/blog']">
+      Go to Blog
+    </div>
+    <img
+      class="blog-poster__head-icon"
+      src="assets/pictures/right_arrow_green.svg" alt="img"
+      [routerLink]="['/blog']">
+  </div>
+  <div
+    *ngIf="featured$ |async as featured"
+    class="blog-poster__content">
+    <div class="blog-poster__first-feature">
+      <img class="blog-poster__first-feature-img" src="{{featured[0].img}}" alt="img" [routerLink]="['/post', featured[0].id]">
+      <div class="blog-poster__first-feature-text">{{featured[0].text}}</div>
+      <div class="blog-poster__first-feature-author">{{featured[0].author}}</div>
+    </div>
+    <div class="blog-poster__second-feature">
+      <img class="blog-poster__second-feature-img" src="{{featured[1].img}}" alt="img" [routerLink]="['/post', featured[1].id]">
+      <div class="blog-poster__second-feature-text">{{featured[1].text}}</div>
+      <div class="blog-poster__second-feature-author">{{featured[1].author}}</div>
+    </div>
+    <div
+      *ngIf="posts$ | async as posts"
+      class="blog-poster__posts">
+      <div class="blog-poster__post">
+        <img
+          class="blog-poster__post-img"
+          alt="img"
+          [routerLink]="['/post', posts[0].id]"
+          src="{{posts[0].img}}">
+        <div class="blog-poster__post-text">{{posts[0].text}}</div>
+        <div class="blog-poster__post-author">{{posts[0].author}}</div>
+      </div>
+      <div class="blog-poster__post">
+        <img
+          class="blog-poster__post-img"
+          alt="img"
+          [routerLink]="['/post', posts[1].id]"
+          src="{{posts[1].img}}">
+        <div class="blog-poster__post-text">{{posts[1].text}}</div>
+        <div class="blog-poster__post-author">{{posts[1].author}}</div>
+      </div>
+      <div class="blog-poster__post">
+        <img
+          class="blog-poster__post-img"
+          alt="img"
+          [routerLink]="['/post', posts[2].id]"
+          src="{{posts[2].img}}">
+        <div class="blog-poster__post-text">{{posts[2].text}}</div>
+        <div class="blog-poster__post-author">{{posts[2].author}}</div>
+      </div>
+    </div>
+  </div>
+</div>

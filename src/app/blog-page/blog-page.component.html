@@ -1,0 +1,48 @@
+<div class="blog"
+     *ngIf="posts$ | async as posts">
+  <div class="head">
+    <div class="head__title">Pictures for everyone</div>
+    <div class="head__buttons">
+      <img class="head__icon" src="assets/pictures/ic-layout-square-grid.svg" alt="img">
+      <div class="head__button" data-cy="grid_button" (click)="toGridView()"> Grid view</div>
+      <img class="head__icon" src="assets/pictures/ic-layout-sections.svg" alt="img">
+      <div class="head__button" data-cy="list_button" (click)="toListView()"> List view</div>
+    </div>
+  </div>
+  <div
+    *ngIf="featured$ | async as featured"
+    class="blog__featured-posts">
+    <div
+      *ngFor="let post of featured"
+      class="blog__featured-post">
+      <img class="blog__featured-post-img" src="{{post.img}}" alt="img" [routerLink]="['/post', post.id]">
+      <div class="blog__featured-post-text">{{post.text}}</div>
+      <div class="blog__featured-post-author">{{post.author}} &nbsp;&nbsp;&nbsp; {{post.date}}</div>
+
+    </div>
+  </div>
+  <div class="blog__list">
+    <div class="blog__menu">
+      <div
+        *ngIf="menu$ | async as menu"
+        class="blog__menu-chapter">Category
+        <ng-container *ngFor="let el of menu">
+          <a class="blog__menu-item">{{el.name}}</a>
+        </ng-container>
+      </div>
+    </div>
+    <div class="blog__content">
+      <div class="blog__post-item post"
+        *ngFor="let post of posts">
+        <img class="post__img" src="{{post.img}}" alt="img" [routerLink]="['/post', post.id]">
+        <div class="post__text">{{post.text}}</div>
+        <div class="post__author">{{post.author}} &nbsp;&nbsp;&nbsp; {{post.date}}</div>
+      </div>
+    </div>
+  </div>
+  <div class="blog__navigation">
+    <div class="blog__pages"></div>
+    <div class="blog__button"></div>
+    <div class="blog__posts-amount"></div>
+  </div>
+</div>
